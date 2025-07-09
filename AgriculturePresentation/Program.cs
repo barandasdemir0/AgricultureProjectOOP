@@ -28,6 +28,12 @@ builder.Services.AddScoped<IAdressDal, EfAddressDal>();
 builder.Services.AddScoped<IContactService, ContactManager>();
 builder.Services.AddScoped<IContactDal, EfContactDal>();
 
+builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
+builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+
 
 
 builder.Services.AddDbContext<AgriCultureContext>();

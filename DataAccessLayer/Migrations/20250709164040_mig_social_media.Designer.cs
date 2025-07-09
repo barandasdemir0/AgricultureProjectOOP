@@ -4,6 +4,7 @@ using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(AgriCultureContext))]
-    partial class AgriCultureContextModelSnapshot : ModelSnapshot
+    [Migration("20250709164040_mig_social_media")]
+    partial class mig_social_media
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,25 +24,6 @@ namespace DataAccessLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("EntityLayer.Concrete.About", b =>
-                {
-                    b.Property<int>("AboutID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AboutID"));
-
-                    b.Property<string>("AboutHistory")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AboutUs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AboutID");
-
-                    b.ToTable("Abouts");
-                });
 
             modelBuilder.Entity("EntityLayer.Concrete.Address", b =>
                 {
@@ -148,12 +132,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ServiceID"));
-
-                    b.Property<string>("Class1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Class2")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
