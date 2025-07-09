@@ -1,0 +1,62 @@
+﻿@model EntityLayer.Concrete.Team
+@{
+    ViewData["Title"] = "UpdateTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Takım Arkadaşı Güncelleme</h4>
+
+                @Html.HiddenFor(x => x.TeamID)
+                <div class="form-group">
+                    <label> Adı Soyadı</label>
+                    <span asp-validation-for="PersonName"></span>
+                    <input type="text" asp-for="PersonName" class="form-control" placeholder="Ad-Soyad" />
+                </div>
+                <div class="form-group">
+                    <label> Görevi</label>
+                    <span asp-validation-for="Title"></span>
+                    <input type="text" asp-for="Title"  class="form-control" placeholder="Görevi" />
+                </div>
+
+
+                <div class="form-group">
+                    <label> Görsel</label>
+                    <span asp-validation-for="ImageUrl"></span>
+                    <input type="text" asp-for="ImageUrl"   class="form-control" placeholder="Görsel Yolu" />
+                </div>
+
+
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="text" asp-for="FacebookUrl" class="form-control" placeholder="Facebook Linki Giriniz" />
+                </div>
+
+
+                <div class="form-group">
+                    <label> Instagram</label>
+                    <input type="text" asp-for="InstagramUrl" class="form-control" placeholder="Instagram Linki Giriniz" />
+                </div>
+
+
+                <div class="form-group">
+                    <label> X</label>
+                    <input type="text" asp-for="XUrl" class="form-control" placeholder="X Linki Giriniz" />
+                </div>
+
+                <div class="form-group">
+                    <label>Web Sitesi</label>
+                    <input type="text" asp-for="WebSiteUrl" class="form-control" placeholder="Web Sitesi Linki Giriniz" />
+                </div>
+
+                <button class="btn btn-outline-primary">güncelle</button>
+
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -7,6 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\documentation\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\fonts\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\fonts\Roboto\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\images\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\images\auth\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\images\faces\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\js\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\pages\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\pages\charts\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\pages\forms\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\pages\icons\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\pages\samples\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\pages\tables\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\pages\ui-features\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\scss\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\scss\components\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\scss\mixins\.DS_Store" />
+    <None Include="wwwroot\MajesticAdmin-Free-Bootstrap-Admin-Template-master\template\vendors\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.17">
       <PrivateAssets>all</PrivateAssets>
