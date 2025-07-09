@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Announcement
+@{
+    ViewData["Title"] = "AddAnnouncements";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+
+
+            <div class="card-body">
+                <h4 class="card-title">Yeni Duyuru girişi</h4>
+                <div class="form-group">
+                    <label> Görevi</label>
+                    <span asp-validation-for="Title"></span>
+                    <input type="text" asp-for="Title" class="form-control" placeholder="Başlık" />
+                </div>
+
+
+                <div class="form-group">
+                    <label>Durum</label>
+                    <span asp-validation-for="Status"></span>
+                    <select asp-for="Status" class="form-control">
+                        <option value="true">Aktif</option>
+                        <option value="false">Pasif</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label> Görsel</label>
+                    <span asp-validation-for="Description"></span>
+                    <textarea cols="30" rows="5" asp-for="Description" class="form-control" placeholder="Açıklama"></textarea>
+                </div>
+
+
+                <button class="btn btn-outline-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</form>
+

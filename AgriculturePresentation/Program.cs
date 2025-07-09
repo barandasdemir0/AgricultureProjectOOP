@@ -15,6 +15,20 @@ builder.Services.AddScoped<IServiceDal, EfServiceDal>();
 builder.Services.AddScoped<ITeamService, TeamManager>();
 builder.Services.AddScoped<ITeamDal, EfTeamDal>();
 
+builder.Services.AddScoped<IAnnouncementsService, AnnouncementManager>();
+builder.Services.AddScoped<IAnnouncementsDal, EfAnnouncementsDal>();
+
+
+builder.Services.AddScoped<IImageService, ImageManager>();
+builder.Services.AddScoped<IImageDal, EfImageDal>();
+
+builder.Services.AddScoped<IAddressService, AddressManager>();
+builder.Services.AddScoped<IAdressDal, EfAddressDal>();
+
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+
+
 
 builder.Services.AddDbContext<AgriCultureContext>();
 

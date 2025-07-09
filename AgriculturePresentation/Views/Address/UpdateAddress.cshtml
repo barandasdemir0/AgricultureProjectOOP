@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.Address
+@{
+    ViewData["Title"] = "UpdateAddress";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Adress Güncelleme</h4>
+
+                @Html.HiddenFor(x => x.AddressID)
+                <div class="form-group">
+                    <label>Açıklama 1</label>
+                    <span asp-validation-for="Description1"></span>
+                    <input type="text" asp-for="Description1" class="form-control" placeholder="Açıklama 1" />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama 2</label>
+                    <span asp-validation-for="Description2"></span>
+                    <input type="text" asp-for="Description2" class="form-control" placeholder="Açıklama 1" />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama 3</label>
+                    <span asp-validation-for="Description3"></span>
+                    <input type="text" asp-for="Description3" class="form-control" placeholder="Açıklama 1" />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama 4</label>
+                    <span asp-validation-for="Description4"></span>
+                    <input type="text" asp-for="Description4" class="form-control" placeholder="Açıklama 1" />
+                </div>
+
+                <div class="form-group">
+                    <label>Harita konumu</label>
+                    <span asp-validation-for="Mapinfo"></span>
+                    <input type="text" asp-for="Mapinfo" class="form-control" placeholder="Harita bilgisi" />
+                </div>
+              
+                <button class="btn btn-outline-primary">güncelle</button>
+
+
+            </div>
+        </div>
+    </div>
+</form>
+
