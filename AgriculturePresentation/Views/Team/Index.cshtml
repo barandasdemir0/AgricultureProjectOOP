@@ -27,7 +27,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td class="py-1"><img src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/images/faces/face1.jpg" alt="image" /></td>
+                                <td class="py-1"><img src="@item.ImageUrl" alt="image" /></td>
                                 <td>@item.TeamID</td>
                                 <td>@item.PersonName</td>
                                 <td>@item.Title</td>

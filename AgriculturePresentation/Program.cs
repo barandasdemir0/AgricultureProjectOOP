@@ -1,38 +1,38 @@
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.Container;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Context;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IServiceService, ServiceManager>();
-builder.Services.AddScoped<IServiceDal, EfServiceDal>();
+builder.Services.ContainerDependencies();
 
-builder.Services.AddScoped<ITeamService, TeamManager>();
-builder.Services.AddScoped<ITeamDal, EfTeamDal>();
-
-builder.Services.AddScoped<IAnnouncementsService, AnnouncementManager>();
-builder.Services.AddScoped<IAnnouncementsDal, EfAnnouncementsDal>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AgriCultureContext>();
 
 
-builder.Services.AddScoped<IImageService, ImageManager>();
-builder.Services.AddScoped<IImageDal, EfImageDal>();
 
-builder.Services.AddScoped<IAddressService, AddressManager>();
-builder.Services.AddScoped<IAdressDal, EfAddressDal>();
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 
-builder.Services.AddScoped<IContactService, ContactManager>();
-builder.Services.AddScoped<IContactDal, EfContactDal>();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
 
-builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
-builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
-
-builder.Services.AddScoped<IAboutService, AboutManager>();
-builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+builder.Services.AddMvc();
+builder.Services.AddAuthentication(
+        CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+        {
+            x.LoginPath = "/Login/Index/";
+        });
 
 
 
